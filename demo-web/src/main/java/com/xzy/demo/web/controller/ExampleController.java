@@ -1,6 +1,7 @@
 package com.xzy.demo.web.controller;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import com.xzy.demo.biz.service.ExampleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,10 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by RuzzZZ on 2017/3/30.
  */
-//@RestController == @Controller + @ResponseBody
 @RestController
-@EnableAutoConfiguration
 public class ExampleController {
+
+    @Autowired
+    private ExampleService exampleService;
+
+    @RequestMapping("/sayHello")
+    String sayHello() {
+        return exampleService.sayHello();
+    }
 
     @RequestMapping("/home")
     String home() {

@@ -13,16 +13,38 @@
         <module>demo-core</module>
     </modules>
 
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.5.2.RELEASE</version>
-        </dependency>
+    <properties>
+        <project.version>1.0.0-SNAPSHOT</project.version>
+        <spring.boot.version>1.5.2.RELEASE</spring.boot.version>
+    </properties>
 
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.xzy.demo</groupId>
+                <artifactId>demo-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
+            <dependency>
+                <groupId>com.xzy.demo</groupId>
+                <artifactId>demo-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

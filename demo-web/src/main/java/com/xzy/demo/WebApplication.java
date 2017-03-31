@@ -1,17 +1,18 @@
 package com.xzy.demo;
 
-import com.xzy.demo.web.controller.ExampleController;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Created by RuzzZZ on 2017/3/30.
  */
 
-@EnableAutoConfiguration
+@ComponentScan(basePackages = {"com.xzy.demo"})
+@SpringBootApplication
 public class WebApplication {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(ExampleController.class, args);
+        SpringApplication.run(WebApplication.class, args);
     }
 }
