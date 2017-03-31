@@ -1,4 +1,4 @@
-package com.xzy.demo;
+package com.xzy.demo.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,8 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * Created by RuzzZZ on 2017/3/30.
  */
-
-@ComponentScan(basePackages = {"com.xzy.demo"})
+@ComponentScan(value = {"com.xzy.demo.web","com.xzy.demo.biz"})
 @SpringBootApplication
 public class WebApplication {
 
