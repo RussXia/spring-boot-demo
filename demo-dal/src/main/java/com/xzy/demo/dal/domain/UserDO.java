@@ -1,7 +1,8 @@
 package com.xzy.demo.dal.domain;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
@@ -26,5 +27,17 @@ public class UserDO implements Serializable {
      * demo_user.password
      */
     private String password;
+
+    /**
+     * 创建时间
+     * demo_user.gmt_create
+     */
+    private Date gmtCreate;
+
+    /**
+     * 修改时间
+     * demo_user.gmt_modified
+     */
+    private Date gmtModified;
 
 }

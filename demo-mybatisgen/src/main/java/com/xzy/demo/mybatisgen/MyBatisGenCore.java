@@ -181,7 +181,7 @@ class MyBatisGenCore {
      */
      private static String getJavaType(String columnClassName, String columnTypeName, int scale, int precision) {
         if (columnClassName.equals("java.sql.Timestamp")) {
-            return "LocalDate";
+            return "Date";
         }
         if (columnClassName.equals("java.lang.String")) {
             return "String";

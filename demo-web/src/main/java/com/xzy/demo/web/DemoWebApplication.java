@@ -9,9 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @ComponentScan(value = {"com.xzy.demo"})
 @SpringBootApplication
-public class WebApplication {
+public class DemoWebApplication {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(WebApplication.class, args);
+        SpringApplication.run(DemoWebApplication.class, args);
     }
 }

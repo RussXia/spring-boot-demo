@@ -37,7 +37,6 @@ public class ExampleController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     String index() {
-        // TODO: 2017/3/29 视图的怎么设置。。。
         return "welcome";
     }
 }

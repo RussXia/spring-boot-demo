@@ -11,8 +11,6 @@ import org.springframework.stereotype.Repository;
 /**
  * MyBatis Mapper for ${className}.
  */
- @Mapper
- @Repository
 public interface ${className}${mapperSuffix} {
     /**
      * query count by query condition.
