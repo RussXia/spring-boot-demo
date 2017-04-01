@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ExampleController {
 
 
-    @Value("${demo.env}")
+    @Value("${spring.profiles.active}")
     private String env;
 
     @Autowired

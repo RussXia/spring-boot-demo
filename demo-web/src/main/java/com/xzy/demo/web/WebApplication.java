@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * Created by RuzzZZ on 2017/3/30.
  */
-@ComponentScan(value = {"com.xzy.demo.web","com.xzy.demo.biz"})
+@ComponentScan(value = {"com.xzy.demo"})
 @SpringBootApplication
 public class WebApplication {
 
