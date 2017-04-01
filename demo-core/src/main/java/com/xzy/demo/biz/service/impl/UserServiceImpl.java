@@ -20,7 +20,6 @@ public class UserServiceImpl implements UserService {
         UserDO userDO = new UserDO();
         userDO.setLoginName("xia");
         userDO.setPassword("123456");
-        // TODO: 2017/4/1 mapper文件还没有配置好!!!
         userManager.insertSelective(userDO);
         return true;
     }

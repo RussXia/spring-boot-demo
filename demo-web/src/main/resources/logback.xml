@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <property name="PROJECT_NAME" value="demo-web" />
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d %p (%file:%line\)- %m%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%level]  [${PROJECT_NAME}] [%class.%method] —-|%msg|-—%n</pattern>
+            <!--<pattern>%d %p (%file:%line\)- %m%n</pattern>-->
             <charset>UTF-8</charset>
         </encoder>
     </appender>
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>/Users/RuzzZZ/logs/axela_logs/axela.log</File>
+        <File>/Users/RuzzZZ/logs/demo/demo-web.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/DQ/development/logs/axela_logs/axela.log.%d.%i</fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy  class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>64 MB</maxFileSize>
+            <fileNamePattern>/Users/RuzzZZ/logs/demo/demo-web.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>100000</maxHistory>
+            <!-- 日志文件rolling触发策略 -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <MaxFileSize>10MB</MaxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
+        <!-- 日志输出格式 -->
         <encoder>
-            <pattern>
-                %d %p (%file:%line\)- %m%n
-            </pattern>
+            <!--<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%level]  [${PROJECT_NAME}] [%class.%method] --|%msg|--%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
