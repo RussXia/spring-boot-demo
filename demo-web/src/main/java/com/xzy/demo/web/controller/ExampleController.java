@@ -39,4 +39,9 @@ public class ExampleController {
     String index() {
         return "welcome";
     }
+
+    @RequestMapping(value = "/cache", method = RequestMethod.GET)
+    String cache() {
+        return exampleService.addCache();
+    }
 }

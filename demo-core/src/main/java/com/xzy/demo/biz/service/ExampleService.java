@@ -6,4 +6,6 @@ package com.xzy.demo.biz.service;
 public interface ExampleService {
 
     String sayHello();
+
+    String addCache();
 }

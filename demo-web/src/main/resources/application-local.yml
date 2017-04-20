@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8001
 
 spring:
   application:
@@ -33,16 +33,16 @@ spring:
 #      loginUserName:
 #      loginPassword:
 
-#  redis:
-#      host:
-#      port: 6399
-#      password:
-#      pool:
-#        max-idle: 16
-#        min-idle: 8
-#        max-active: 256
-#        max-wait: 512
-#      timeout: 2000
+  redis:
+      host: 127.0.0.1
+      port: 6379
+      password: hello1234
+      pool:
+        max-idle: 16
+        min-idle: 8
+        max-active: 256
+        max-wait: 512
+      timeout: 2000
 
   # Dubbo
 #  dubbo:
