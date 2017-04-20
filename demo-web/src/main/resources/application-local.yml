@@ -1,0 +1,84 @@
+server:
+  port: 8888
+
+spring:
+  application:
+      name: spring-boot-demo
+
+  # MySQL
+  datasource:
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+#      type: com.alibaba.druid.pool.DruidDataSource
+
+      #连接池的配置信息
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: true
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      filters: stat,wall,log4j
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+      # Druid Login Params
+#      loginUserName: admin
+#      loginPassword: Hello@1234
+
+#  redis:
+#      host:
+#      port: 6399
+#      password:
+#      pool:
+#        max-idle: 16
+#        min-idle: 8
+#        max-active: 256
+#        max-wait: 512
+#      timeout: 2000
+
+  # Dubbo
+#  dubbo:
+#      application:
+#        name: seat
+#        owner: zhengtai
+#        organization: mhc
+#      registry:
+#        address: zookeeper://172.21.10.42:2181?backup=172.21.10.43:2181
+#      protocol:
+#        name: dubbo
+#        port: 20884
+#      provider:
+#        version: 1.0_local_xia
+#        timeout: 5000
+#      consumer:
+#        version: 1.0_local
+#        timeout: 15000
+#        retries: 0
+#        check: false
+
+  # dubbo invoke trace
+#  zipkin:
+#    base-url: http://zk.haimaiche.net:9411
+#  # sleuth追踪采样率
+#  sleuth:
+#    sampler:
+#      percentage: 10
+
+# mybatis
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.xzy.demo.dal.domain
+  config-location: classpath:mybatis/mybatis-config.xml
+
+# springboot actuator Security Config
+#management:
+# security:
+#   enabled: false

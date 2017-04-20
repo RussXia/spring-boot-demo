@@ -1,5 +1,6 @@
 package com.xzy.demo.web;
 
+import com.xzy.demo.biz.DemoServerApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,6 +13,6 @@ import org.springframework.context.annotation.ComponentScan;
 public class DemoWebApplication {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(DemoWebApplication.class, args);
+        SpringApplication.run(new Object[]{DemoWebApplication.class, DemoServerApplication.class}, args);
     }
 }

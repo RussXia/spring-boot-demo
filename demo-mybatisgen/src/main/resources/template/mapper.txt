@@ -3,14 +3,16 @@ package ${mapperPackage};
 import ${doPackage}.${className}${doSuffix};
 import ${queryPackage}.${className}${queryPrefix};
 
-import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 /**
  * MyBatis Mapper for ${className}.
  */
+ @Mapper
+ @Repository
 public interface ${className}${mapperSuffix} {
     /**
      * query count by query condition.

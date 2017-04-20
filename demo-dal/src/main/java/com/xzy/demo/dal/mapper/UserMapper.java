@@ -2,15 +2,16 @@ package com.xzy.demo.dal.mapper;
 
 import com.xzy.demo.dal.domain.UserDO;
 import com.xzy.demo.dal.domain.query.UserQuery;
-
-import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 /**
  * MyBatis Mapper for User.
  */
+@Mapper
+@Repository
 public interface UserMapper {
     /**
      * query count by query condition.

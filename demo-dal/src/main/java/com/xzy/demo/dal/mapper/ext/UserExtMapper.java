@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 /**
  * MyBatis Ext Mapper for User.
  */
+@Mapper
+@Repository
 public interface UserExtMapper extends UserMapper {
 
 }

@@ -7,7 +7,7 @@
     <groupId>com.xzy.demo</groupId>
     <artifactId>spring-boot-demo</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <modules>
         <module>demo-web</module>
         <module>demo-core</module>
@@ -23,7 +23,7 @@
     </parent>
 
     <properties>
-        <project.version>1.0.0-SNAPSHOT</project.version>
+        <project.version>1.0</project.version>
         <java.version>1.8</java.version>
     </properties>
 
@@ -43,6 +43,11 @@
             <dependency>
                 <groupId>com.xzy.demo</groupId>
                 <artifactId>demo-dal</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xzy.demo</groupId>
+                <artifactId>demo-mybastisgen</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -108,8 +113,11 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
             </plugin>
         </plugins>
     </build>

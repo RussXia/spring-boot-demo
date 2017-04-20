@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 /**
  * MyBatis Ext Mapper for ${className}.
  */
+ @Mapper
+ @Repository
 public interface ${className}${extMapperSuffix} extends ${className}${mapperSuffix} {
 
 }
