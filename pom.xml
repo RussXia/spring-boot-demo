@@ -13,6 +13,7 @@
         <module>demo-core</module>
         <module>demo-dal</module>
         <module>demo-mybatisgen</module>
+        <module>demo-api</module>
     </modules>
 
     <parent>
