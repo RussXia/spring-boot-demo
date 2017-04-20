@@ -1,6 +1,7 @@
 package com.xzy.demo.biz;
 
 
+import com.xzy.demo.dal.DemoDalApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,6 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoServerApplication.class, args);
+        SpringApplication.run(new Object[]{DemoServerApplication.class, DemoDalApplication.class}, args);
     }
 }

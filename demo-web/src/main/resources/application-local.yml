@@ -30,8 +30,8 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
 
       # Druid Login Params
-#      loginUserName: admin
-#      loginPassword: Hello@1234
+#      loginUserName:
+#      loginPassword:
 
 #  redis:
 #      host:
