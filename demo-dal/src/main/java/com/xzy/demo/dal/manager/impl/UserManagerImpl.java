@@ -18,6 +18,7 @@ import java.util.List;
 /**
  * Manager for User.
  */
+
 @Component
 public class UserManagerImpl implements UserManager{
 

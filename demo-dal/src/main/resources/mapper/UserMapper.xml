@@ -6,7 +6,11 @@
         <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
         <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
         <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+        <result column="cert_no" jdbcType="VARCHAR" property="certNo" />
         <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="sex" jdbcType="TINYINT" property="sex" />
+        <result column="is_verify" jdbcType="TINYINT" property="isVerify" />
+        <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
     </resultMap>
 
     <sql id="Query_Where_Clause">
@@ -70,7 +74,7 @@
     </sql>
 
     <sql id="Base_Column_List">
-        user_id,gmt_create,gmt_modified,login_name,password
+        user_id,gmt_create,gmt_modified,login_name,cert_no,password,sex,is_verify,is_deleted
     </sql>
 
     <select id="selectByQuery" parameterType="com.xzy.demo.dal.domain.query.UserQuery" resultMap="BaseResultMap">
@@ -114,8 +118,20 @@
             <if test="loginName != null">
                 login_name,
             </if>
+            <if test="certNo != null">
+                cert_no,
+            </if>
             <if test="password != null">
                 password,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="isVerify != null">
+                is_verify,
+            </if>
+            <if test="isDeleted != null">
+                is_deleted,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -123,8 +139,20 @@
             <if test="loginName != null">
                 #{loginName,jdbcType=VARCHAR},
             </if>
+            <if test="certNo != null">
+                #{certNo,jdbcType=VARCHAR},
+            </if>
             <if test="password != null">
                 #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=TINYINT},
+            </if>
+            <if test="isVerify != null">
+                #{isVerify,jdbcType=TINYINT},
+            </if>
+            <if test="isDeleted != null">
+                #{isDeleted,jdbcType=TINYINT},
             </if>
         </trim>
     </insert>
@@ -143,8 +171,20 @@
             <if test="record.loginName != null">
                 login_name = #{record.loginName,jdbcType=VARCHAR},
             </if>
+            <if test="record.certNo != null">
+                cert_no = #{record.certNo,jdbcType=VARCHAR},
+            </if>
             <if test="record.password != null">
                 password = #{record.password,jdbcType=VARCHAR},
+            </if>
+            <if test="record.sex != null">
+                sex = #{record.sex,jdbcType=TINYINT},
+            </if>
+            <if test="record.isVerify != null">
+                is_verify = #{record.isVerify,jdbcType=TINYINT},
+            </if>
+            <if test="record.isDeleted != null">
+                is_deleted = #{record.isDeleted,jdbcType=TINYINT},
             </if>
         </set>
         <if test="_parameter != null">
@@ -155,7 +195,11 @@
     <update id="updateByQuery" parameterType="map">
         update demo_user set
         login_name = #{record.loginName,jdbcType=VARCHAR},
+        cert_no = #{record.certNo,jdbcType=VARCHAR},
         password = #{record.password,jdbcType=VARCHAR},
+        sex = #{record.sex,jdbcType=TINYINT},
+        is_verify = #{record.isVerify,jdbcType=TINYINT},
+        is_deleted = #{record.isDeleted,jdbcType=TINYINT},
         gmt_modified = now()
         <if test="_parameter != null">
             <include refid="Update_By_Query_Where_Clause" />
@@ -169,8 +213,20 @@
             <if test="loginName != null">
                 login_name = #{loginName,jdbcType=VARCHAR},
             </if>
+            <if test="certNo != null">
+                cert_no = #{certNo,jdbcType=VARCHAR},
+            </if>
             <if test="password != null">
                 password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=TINYINT},
+            </if>
+            <if test="isVerify != null">
+                is_verify = #{isVerify,jdbcType=TINYINT},
+            </if>
+            <if test="isDeleted != null">
+                is_deleted = #{isDeleted,jdbcType=TINYINT},
             </if>
         </set>
         where user_id = #{userId,jdbcType=BIGINT}

@@ -19,6 +19,7 @@ public class MyBatisGenConst {
     public static final String MANAGER_IMPL_PACKAGE= MANAGER_PACKAGE+".impl";
 
     public static final String MAPPER_EXT_PACKAGE = "com.xzy.demo.dal.mapper.ext";
+    //表名前缀
     public static final String TABLE_PREFIX = "demo_";
     public static final String QUERY_PREFIX = "Query";
     public static final String MAPPER_SUFFIX = "Mapper";

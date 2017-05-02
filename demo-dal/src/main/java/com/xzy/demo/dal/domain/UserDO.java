@@ -23,10 +23,34 @@ public class UserDO implements Serializable {
     private String loginName;
 
     /**
-     * 密码
+     * 
+     * demo_user.cert_no
+     */
+    private String certNo;
+
+    /**
+     * 
      * demo_user.password
      */
     private String password;
+
+    /**
+     * 性别 0 男 1 女
+     * demo_user.sex
+     */
+    private Integer sex;
+
+    /**
+     * 个人信息验证状态（0为未完善，10为待验证，15为驳回，20为验证通过）
+     * demo_user.is_verify
+     */
+    private Integer isVerify;
+
+    /**
+     * 是否物流删除: 1-已删除, 0-未删除
+     * demo_user.is_deleted
+     */
+    private Integer isDeleted;
 
     /**
      * 创建时间
