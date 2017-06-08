@@ -14,9 +14,8 @@ import org.springframework.context.annotation.ComponentScan;
 public class DemoWebApplication {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication app = new SpringApplication(new Object[]{DemoWebApplication.class, DemoServerApplication.class});
+        SpringApplication app = new SpringApplication(DemoWebApplication.class);
         app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
-        SpringApplication.run(new Object[]{DemoWebApplication.class, DemoServerApplication.class}, args);
     }
 }
