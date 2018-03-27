@@ -109,7 +109,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <!-- spring会根据你导入的依赖，自动配置，所以不要瞎引jar包!!! -->
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
