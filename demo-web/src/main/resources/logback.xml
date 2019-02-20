@@ -9,9 +9,9 @@
         </encoder>
     </appender>
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>/Users/RuzzZZ/logs/demo/demo-web.log</File>
+        <File>~/logs/demo/demo-web.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/RuzzZZ/logs/demo/demo-web.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>~/logs/demo/demo-web.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxHistory>100000</maxHistory>
             <!-- 日志文件rolling触发策略 -->
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">

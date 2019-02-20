@@ -10,5 +10,5 @@ spring:
 
 logging:
   config: classpath:logback.xml
-  path: /Users/ruzzzz/logs/spring-boot-demo/demo.log
+  path: ~/logs/spring-boot-demo/demo.log
   level: info
