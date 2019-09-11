@@ -1,5 +1,8 @@
 server:
   port: 28001
+  error:
+    whitelabel:
+      enabled: false
 
 spring:
   application:
@@ -11,7 +14,7 @@ spring:
       username: root
       password: 123456
       driver-class-name: com.mysql.jdbc.Driver
-#      type: com.alibaba.druid.pool.DruidDataSource
+      type: com.alibaba.druid.pool.DruidDataSource
 
       #连接池的配置信息
       initialSize: 5
@@ -33,16 +36,6 @@ spring:
 #      loginUserName:
 #      loginPassword:
 
-  redis:
-      host: 127.0.0.1
-      port: 6379
-      password: hello1234
-      pool:
-        max-idle: 16
-        min-idle: 8
-        max-active: 256
-        max-wait: 512
-      timeout: 2000
 
   # Dubbo
 #  dubbo:
