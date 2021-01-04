@@ -6,6 +6,8 @@ import com.xzy.demo.util.PageHelper;
 import org.mybatis.dynamic.sql.render.RenderingStrategies;
 import org.mybatis.dynamic.sql.select.render.SelectStatementProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.Assert;
 
@@ -40,6 +42,7 @@ public class AccountRepository {
         return (int) accountMapper.count(count);
     }
 
+    @Cacheable(value = "account", key = "#id")
     public Optional<Account> selectByPrimaryKey(Integer id) {
         return accountMapper.selectOne(c -> c.where(account.id, isEqualTo(id)));
     }
@@ -64,6 +67,7 @@ public class AccountRepository {
         return accountMapper.delete(c -> c.where(account.id, isEqualTo(id)));
     }
 
+    @CacheEvict(value = "account", key = "#record.id")
     public int updateByPrimaryKeySelective(Account record) {
         Assert.notNull(record, "account can't be null");
         Assert.notNull(record.getId(), "id can't be null");
@@ -72,6 +76,7 @@ public class AccountRepository {
                 .where(account.id, isEqualTo(record.getId())));
     }
 
+    @CacheEvict(value = "account", key = "#record.id")
     public int updateByPrimaryKey(Account record) {
         Assert.notNull(record, "account can't be null");
         Assert.notNull(record.getId(), "id can't be null");
