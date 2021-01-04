@@ -1,0 +1,47 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- 具体配置参考:https://mybatis.org/generator/configreference/xmlconfig.html -->
+<generatorConfiguration>
+    <context id="dsql" targetRuntime="MyBatis3DynamicSql">
+        <plugin type="com.xzy.demo.CustomPluginAdapter"/>
+        <!--<plugin type="com.xzy.demo.RenameJavaMapperPlugin">-->
+        <!--<property name="searchString" value="DO" />-->
+        <!--<property name="replaceString" value="" />-->
+        <!--</plugin>-->
+
+        <commentGenerator>
+            <!--<property name="suppressAllComments" value="true"/>-->
+            <property name="addRemarkComments" value="true"/>
+            <property name="dateFormat" value="yyyy-MM-dd"/>
+        </commentGenerator>
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false&amp;tinyInt1isBit=false"
+                userId="root"
+                password="123456"/>
+
+        <javaTypeResolver type="com.xzy.demo.CustomJavaTypeResolverDefaultImpl">
+            <!-- jdbc的numeric、decimal转换为decimal -->
+            <property name="forceBigDecimals" value="true"/>
+
+            <!-- 时间处理，默认为false，全部处理为date类型 -->
+            <!--<property name="useJSR310Types" value="true"/>-->
+        </javaTypeResolver>
+
+
+        <javaModelGenerator targetPackage="com.xzy.demo.pojo.entity" targetProject="server/src/main/java"/>
+
+        <javaClientGenerator targetPackage="com.xzy.demo.dao.mapper" targetProject="server/src/main/java"
+                             type="ANNOTATEDMAPPER"/>
+
+
+        <!--<table tableName="test_account" domainObjectName="Account">-->
+        <table tableName="test_account">
+            <!--<property name="constructorBased" value="true"/>-->
+            <!-- 如果表名前缀是test_开头，替换为空 -->
+            <domainObjectRenamingRule searchString="^Test" replaceString=""/>
+        </table>
+    </context>
+</generatorConfiguration>
